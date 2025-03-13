@@ -1,0 +1,240 @@
+/* Mengatur warna dasar dan font */
+body {
+    background-color: #1e1e1ea9;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    
+}
+
+
+.logo{
+    position: absolute;
+    left: 10px;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+i{
+    position: absolute;
+    color: #ffffff;
+    right: 10px;
+    text-shadow: 3px 3px 6px #000;
+
+}
+
+
+
+.container h1{
+    position: absolute;
+    top: 27px;
+    left: 60px;
+    font-size: 0.8rem;
+    text-shadow: 5px 5px 10px  #000;
+}
+
+/* Container utama dengan efek glowing */
+.container {
+    background: image-set(url(image/background.jpg));
+    background-size: contain;
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    
+
+}
+
+/* Efek glowing pada border */
+.container::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    z-index: -1;
+    transition: all 0.8s ease-in-out;
+    transition: all 0.8s ease-out;
+}
+
+/* Gaya menu makanan */
+.menu-item {
+    top: 100px;
+   background-color: #0000006f;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    animation: glowing 1.5s infinite linear; 
+    
+}
+
+/* Tombol Pesan */
+button {
+    background-color: #ff6f00;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #ffa726;
+    box-shadow: 0 0 10px rgba(255, 111, 0, 0.7);
+}
+
+/* Bagian pesanan */
+.order-section {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #2c2c2c;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+input {
+    margin: 8px 8px;
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: center;
+    padding: 6px;
+    background-color: #000;
+    color: #ddd;
+
+    
+}
+
+.login-container{
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #2c2c2c;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#login-form button {
+    padding: 10px 20px;
+    background-color: #ffa726;
+    box-shadow: 0 0 10px rgba(255, 111, 0, 0.7);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Animasi glow */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    }
+}
+
+@keyframes glowing {
+    0% { 
+        box-shadow: 0 0 8px #ff0000; }
+    25% { box-shadow: 0 0 16px #ff7f00; }
+    50% { box-shadow: 0 0 20px #ffff00; }
+    75% { box-shadow: 0 0 16px #00ff00; }
+    100% { box-shadow: 0 0 8px #ff0000; }
+}
+
+.container:hover {
+    animation: glow 1.5s infinite alternate;
+}
+
+
+.menu-toggle {
+    display: block;
+    width: 200px;
+    padding: 15px;
+    margin: 20px auto;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    background: linear-gradient(145deg, #ff5722, #e64a19);
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.8s ease-in-out;
+    transition: all 0.8s ease-out;
+    
+}
+.menu-toggle1{
+    display: block;
+    width: 200px;
+    padding: 15px;
+    margin: 80px auto auto;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    background: linear-gradient(145deg, #ff5722, #e64a19);
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.8s ease-in-out;
+    transition: all 0.8s ease-out;
+
+}
+
+.menu-toggle:hover {
+    background: linear-gradient(145deg, #e64a19, #ff7043);
+    box-shadow: 0 0 25px rgba(255, 87, 34, 1);
+}
+
+
+input[type="text"] , [type = "password"]{
+    width: 80%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #000;
+    height: 40px;
+}
+
+img{
+    width: 180px;
+    height: 160px;
+    border: 2px solid #ff7043;
+    animation: glow 2s infinite ;
+}
+
+
+
+
+

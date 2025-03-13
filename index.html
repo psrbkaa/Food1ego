@@ -1,0 +1,160 @@
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemesanan Makanan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script
+    src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <img src="image/logo web.webp" alt="" class="logo"> 
+        <h1>FOODIEGO</h1> 
+        <a href="https://www.instagram.com/food1ego?igsh=MTlsNHlvNDEzMWQ0MA==" target="_blank">
+            <i class="fa-brands fa-instagram"> f00dieg0</i>
+        </a>
+      
+        <div class="menu-toggle1" onclick="toggleMenu()">Menu Makanan</div>
+        <div id="menu" class="menu" style="display: none;">
+            <div class="menu-item">
+                <img id="dimsum-image" src="image/isi 6.jpg"  alt="Dimsum Mentai" class="menu-image"><br>
+                <br>
+                <label>
+                    <input type="radio" name="jumlah-isi" value="35000" checked onclick="updateDimsumPriceAndImage(35000, 'image/isi 6.jpg')"> isi 6
+                </label>
+                <label>
+                    <input type="radio" name="jumlah-isi" value="45000" onclick="updateDimsumPriceAndImage(45000, 'image/isi 8.jpg')"> isi 8
+                </label>
+                <label>
+                    <input type="radio" name="jumlah-isi" value="110000" onclick="updateDimsumPriceAndImage(110000, 'image/isi 20.jpg')"> isi 20
+                </label>
+                <p id="harga">Rp 35.000</p>
+                <input type="number" id="qty-dimsum" min="1" value="1">
+                <button onclick="addDimsumToOrder()">Pesan</button>
+            </div>
+            
+            <div class="menu-item">
+                <img src="image/risol.jpg" alt="Risol Mayo" class="menu-image">
+                <h2>Risol Mayo</h2>
+                <p>Rp 6.000</p>
+                <input type="number" id="qty-risol" min="1" value="1">
+                <button onclick="addToOrder('Risol Mayo', 6000, 'qty-risol')">Pesan</button>
+            </div>
+            <div class="menu-item">
+                <img src="image/FLOUT PUDDING.jpg" alt="Dessert" class="menu-image">
+                <h3>Flout Pudding</h3>
+                <p>Rp  8.000</p>
+                <select id="pudding-flavor">
+                    <option value="Coklat">Coklat</option>
+                    <option value="mangga">mangga</option>
+                </select>
+                <input type="number" id="qty-pudding" min="1" value="1">
+                <button onclick="addToOrder('Flout Pudding', 8000, 'qty-pudding', 'pudding-flavor')">Tambah ke Keranjang</button>
+
+            </div>
+            <div class="menu-item">
+                <img src="image/pisang coklat.jpg" alt="Pisang Coklat" class="menu-image">
+                <h2>Pisang Coklat</h2>
+                <p>Rp 6.000</p>
+                <input type="number" id="qty-pisang" min="1" value="1">
+                <button onclick="addToOrder('Pisang Coklat', 6000, 'qty-pisang')">Pesan</button>
+            </div>
+            <div class="menu-item">
+                <img src="image/roti bakar.jpeg" alt="Dessert" class="menu-image">
+                <h2>Roti Bakar</h2>
+                <p>Rp 5.000</p>
+                <select id="roti-flavor">
+                    <option value="Coklat">Coklat</option>
+                    <option value="Keju">Keju</option>
+                    <option value="Strawberry">Strawberry</option>
+                    <option value="Kacang">Kacang</option>
+                </select>
+                <input type="number" id="qty-roti" min="1" value="1">
+                <button onclick="addToOrder('Roti Bakar', 5000, 'qty-roti', 'roti-flavor')">Tambah ke Keranjang</button>
+                
+            </div>
+            <div class="menu-item">
+                <img src="image/sostel.jpeg" alt="telur gulung sosis" class="menu-image">
+                <h2>Telur Gulung Sosis</h2>
+                <p>Rp 6.000 /pck</p>
+                <input type="number" id="qty-telur-gulung" min="1" value="1">
+                <button onclick="addToOrder('Telur gulung', 6000, 'qty-telur-gulung')">Pesan</button>
+            </div>
+        </div>
+
+        <!-- Menu Minuman (Drink Menu) -->
+        <div class="menu-toggle" onclick="toggleDrinksMenu()">Menu Minuman</div>
+        <div id="drinks-menu" class="menu" style="display: none;">
+            <div class="menu-item">
+                <img src="image/milo susu.jpeg" alt="Jus Mangga" class="menu-image">
+                <h2>Milo ice</h2>
+                <p>Rp6.000</p>
+                <input type="number" id="qty-milo" min="1" value="1">
+                <button onclick="addToOrder('Milo Ice', 6000, 'qty-milo', )">Pesan</button>
+            </div>
+            <div class="menu-item">
+                <img src="image/cappucino.jpg" alt="Jus Jeruk" class="menu-image">
+                <h2>Cappucino</h2>
+                <p>Rp 6.000</p>
+                <input type="number" id="qty-cappucino" min="1" value="1">
+                <button onclick="addToOrder('Cappucino', 6000, 'qty-cappucino', )">Pesan</button>
+            </div>
+            <div class="menu-item">
+                <img src="image/nutrisari.jpg" alt="Milo Susu" class="menu-image">
+                <h2>Nutrisari</h2>
+                <p>Rp 5.000</p>
+                <input type="number" id="qty-nutrisari" min="1" value="1">
+                <button onclick="addToOrder('Nutrisari', 5000, 'qty-nutrisari', )">Pesan</button>
+            </div>
+            <div class="menu-item">
+                <img src="image/mandi.jpg" alt="Milo Susu" class="menu-image">
+                <h2>Manis Dingin</h2>
+                <p>Rp 5.000</p>
+                <input type="number" id="qty-mandi" min="1" value="1">
+                <button onclick="addToOrder('Mandi', 5000, 'qty-mandi', )">Pesan</button>
+            </div>
+        </div>
+        <div id="store-location">
+            <h3>Lokasi Penjualan</h3>
+            <button onclick="openMap()">Lihat Lokasi di Google Maps</button>
+        </div>                                                                               
+
+        <!-- Form Pesanan -->
+        <div class="delivery-option">
+            <h3>Pilih Pengantaran</h3>
+            <label><input type="radio" name="delivery" value="ambil-sendiri" checked onchange="toggleDeliveryAddress()"> Ambil Sendiri</label>
+            <label><input type="radio" name="delivery" value="diantar" onchange="toggleDeliveryAddress()"> Diantar ke Lokasi</label>
+        </div>
+
+        <div id="order" class="order-section">
+            <h2>Pesanan Anda</h2>
+            <ul id="order-list"></ul>
+            <input type="text" id="customer-name" placeholder="Nama Anda">
+            <input type="text" id="customer-contact" placeholder="Kontak" oninput="validateContact()">
+            <span id="contact-error" style="color: red; display: none;">Harap isi dengan nomor telepon Anda</span>
+
+            <!-- Input Alamat Pengantaran -->
+            <div id="delivery-address" style="display: none;">
+                <label for="address">Alamat Pengantaran:</label>
+                <input type="text" id="address" placeholder="Masukkan alamat lengkap">
+            </div>
+
+            <button onclick="submitOrder()">Kirim Pesanan</button>
+        </div>
+
+    
+            <footer id="kontak">
+                <p>&copy; 2025 FOODIEGO.</p>
+            </footer>
+        </div>
+        
+</body>
+</html>
+
+
+
